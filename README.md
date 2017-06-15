@@ -16,4 +16,4 @@ A Plugin to find out Latitude & Longitude of a specific location.
 
 ## License
 
-Copyright 2017 Rafi Ud Daula Refat
+Copyright 2017@Rafi Ud Daula Refat
