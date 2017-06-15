@@ -1,6 +1,6 @@
 # latify 
 
-### A demo to test how Google map Async Library Works.
+### A demo to test how Google map Async Library Works with react.
 
 A Plugin to find out Latitude & Longitude of a specific location.
 
