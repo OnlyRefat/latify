@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import GoogleMap from './googlemap';
-import Autocomplete from './autocomplete';
 
 import Action from './action';
 import Store from './store';
