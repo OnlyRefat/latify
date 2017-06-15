@@ -9,7 +9,7 @@ A Plugin to find out Latitude & Longitude of a specific location.
 2. Draggable Marker
 
 #### RoadMap
-1.Copy to ClipBoard
+1. Copy to ClipBoard
 
 
 ## Thanks to @react-google-maps for this awesome library.
