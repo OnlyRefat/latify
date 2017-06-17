@@ -9,7 +9,8 @@ A Plugin to find out Latitude & Longitude of a specific location.
 2. Draggable Marker
 ```
 #### RoadMap
-```1. Copy to ClipBoard
+```
+1. Copy to ClipBoard
 ```
 
 
@@ -17,5 +18,6 @@ A Plugin to find out Latitude & Longitude of a specific location.
 
 ## License
 
-```Copyright 2017@Rafi Ud Daula Refat
+```
+Copyright 2017@Rafi Ud Daula Refat
 ```
