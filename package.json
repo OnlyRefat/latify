@@ -31,6 +31,7 @@
     "react": "^15.5.4",
     "react-async-script-loader": "^0.3.0",
     "react-dom": "^15.5.4",
+    "reflux": "^6.4.1",
     "webpack-notifier": "^1.5.0"
   }
 }

@@ -11,17 +11,18 @@ const INPUT_STYLE = {
   boxSizing: `border-box`,
   MozBoxSizing: `border-box`,
   border: `1px solid transparent`,
-  width: `40%`,
-  height: `32px`,
+  width: `50%`,
+  height: `45px`,
   marginTop: `27px`,
   padding: `0 12px`,
   borderRadius: `5px`,
   boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
-  fontSize: `30px`,
+  fontSize: `24px`,
   outline: `none`,
   textOverflow: `ellipses`,
   fontStyle: 'initial',
   textAlign: 'center',
+  backgroundColor: `rgba(255,255,255, 0.9)`,
 };
 
     const GettingStartedGoogleMap = withScriptjs(withGoogleMap(props => (
