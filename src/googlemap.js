@@ -25,36 +25,35 @@ const INPUT_STYLE = {
   backgroundColor: `rgba(255,255,255, 0.9)`,
 };
 
-    const GettingStartedGoogleMap = withScriptjs(withGoogleMap(props => (
-      <GoogleMap
-        ref={props.onMapLoad}
-        defaultZoom={13}
-        center={{ lat: props.markers[0].position.lat , lng: props.markers[0].position.lng }}
-      >
-        <SearchBox
-          ref={props.onSearchBoxMounted}
-          controlPosition={google.maps.ControlPosition.TOP_CENTER}
-          onPlacesChanged={props.onPlacesChanged}
-          inputPlaceholder="Enter Your Desired Location"
-          inputStyle={INPUT_STYLE}
-        />
-    {props.markers.map(marker => (
-      <Marker
-        key="1"
-        {...marker}
-        draggable = {true}
-        onDragEnd={props.markerDrag}
-      >
-          <InfoWindow onCloseClick={() => props.onMarkerClose(marker)}>
-            <div className="infoWindowClass">
-              <Info lat={marker.position.lat} lng={marker.position.lng}/>
-            </div>
-          </InfoWindow>
-      </Marker>
-    ))}
-      </GoogleMap>
-    )));
-
+const GettingStartedGoogleMap = withScriptjs(withGoogleMap(props => (
+  <GoogleMap
+    ref={props.onMapLoad}
+    defaultZoom={13}
+    center={{ lat: props.markers[0].position.lat , lng: props.markers[0].position.lng }}
+  >
+    <SearchBox
+      ref={props.onSearchBoxMounted}
+      controlPosition={google.maps.ControlPosition.TOP_CENTER}
+      onPlacesChanged={props.onPlacesChanged}
+      inputPlaceholder="Enter Your Desired Location"
+      inputStyle={INPUT_STYLE}
+    />
+{props.markers.map(marker => (
+  <Marker
+    key="1"
+    {...marker}
+    draggable = {true}
+    onDragEnd={props.markerDrag}
+  >
+      <InfoWindow onCloseClick={() => props.onMarkerClose(marker)}>
+        <div className="infoWindowClass">
+          <Info lat={marker.position.lat} lng={marker.position.lng}/>
+        </div>
+      </InfoWindow>
+  </Marker>
+))}
+  </GoogleMap>
+)));
 
 export default class GoogleMapComponent extends Component {
   constructor(props) {
@@ -72,6 +71,7 @@ export default class GoogleMapComponent extends Component {
     }
   }
   markerDrag(marker) {
+    this.setState({ markers: [ { position: { lat: Number(marker.latLng.lat().toFixed(4)), lng: Number(marker.latLng.lng().toFixed(4))} } ] });
     Action.markerChange({
       lat: Number(marker.latLng.lat().toFixed(4)),
       lng: Number(marker.latLng.lng().toFixed(4)),
@@ -95,8 +95,7 @@ export default class GoogleMapComponent extends Component {
     });
   }
   render() {
-    return (
-  <GettingStartedGoogleMap
+  return (<GettingStartedGoogleMap
     googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuxPEcwDMrEq04KEJjzhAyMyiJWPbUAus&&libraries=places"
     loadingElement={
       <div style={{ height: `100%` }}>
@@ -121,7 +120,6 @@ export default class GoogleMapComponent extends Component {
     onPlacesChanged={this.handlePlacesChanged}
     markers={this.state.markers}
     markerDrag={this.markerDrag}
-  />
-    );
+  />);
   }
 }
